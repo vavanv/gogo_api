@@ -1,0 +1,284 @@
+
+### Create Log
+POST http://localhost:8081/api/log
+Content-Type: application/json
+
+    {
+        "email":"vavan.v@gmail.com",
+        "action": "login",
+        "message": "OK"
+    }
+
+
+###
+GET http://localhost:8081/
+
+
+###
+GET http://localhost:8081/api/bots
+
+
+###
+GET http://localhost:8081/api/bots
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImlhdCI6MTYyNjU1MTcyNywiZXhwIjoxNjI2NTU1MzI3fQ.vGaD84s3v3YHB1wVSFvNIk2IRFgrd60gVcfXuly0Xmg
+
+
+###
+GET http://localhost:8081/api/files
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImVtYWlsIjoidmF2YW4udkBnbWFpbC5jb20iLCJpYXQiOjE2Mjc2NDQ4NjIsImV4cCI6MTYyNzY0ODQ2Mn0.miAF56ZIc37W1GcN_Q5zg3A__FxVCzd-dnk5Ujd3vhQ
+
+
+###
+POST http://localhost:8081/api/user/nickname
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImVtYWlsIjoidmF2YW4udkBnbWFpbC5jb20iLCJpYXQiOjE2Mjc2NDQ4NjIsImV4cCI6MTYyNzY0ODQ2Mn0.miAF56ZIc37W1GcN_Q5zg3A__FxVCzd-dnk5Ujd3vhQ
+Content-Type: application/json
+
+    {
+        "nickname": "Admin"
+    }
+
+
+###
+GET http://localhost:8081/api/files
+
+
+###
+GET http://localhost:8081/api/users
+
+
+###
+GET http://localhost:8081/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImlhdCI6MTYyNjU1MTcyNywiZXhwIjoxNjI2NTU1MzI3fQ.vGaD84s3v3YHB1wVSFvNIk2IRFgrd60gVcfXuly0Xmg
+
+
+### GOOD ONE
+POST http://localhost:8081/api/user/password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImVtYWlsIjoidmF2YW4udkBnbWFpbC5jb20iLCJpYXQiOjE2MjgxMDI5NDIsImV4cCI6MTYyODEwNjU0Mn0.5LJhZLW3IL9kd9VDLaDEVhd1_elTPyVaYsMcRHAurNw
+Content-Type: application/json
+
+    {
+        "email": "vavan.v@gmail.com",
+        "iHaveCode": false,
+        "confirmationCode": "",
+        "password": "",
+        "confirmationPassword": ""
+    }
+
+
+### GOOD ONE
+POST https://botmanager-v2-api.herokuapp.com/api/auth
+Authorization: Basic dmF2YW4udkBnbWFpbC5jb206dnZ2dg==
+
+
+### BAD ONE
+POST http://localhost:8081/api/auth
+Authorization: Basic Ym1hbmFnZXJ2MkBnbWFpbC5jb206dnZ2dg==
+
+
+###
+POST  http://localhost:8081/api/auth
+
+
+### GOOD ONE
+POST http://localhost:8081/api/user/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlzQWN0aXZlIjp0cnVlLCJfaWQiOiI2MGVjZDY2NjU3NzQ5YjFkOTQwOTViY2YiLCJlbWFpbCI6InZhdmFuLnZAZ21haWwuY29tIiwibmlja25hbWUiOiJBZG1pbiBHb29kIE9uZSIsInBhc3N3b3JkIjoiJDJiJDEwJEltbHlWWHBodmJhRVRLWktFYWh0YS5pbkNCQTIxOWN5UEpYNVlBVC5wUVdlWUdPV1RHWE51IiwiZGV0YWlscyI6IkFkbWluIHdobyBpcyB3YXRjaGluZyB5b3UsIG1vcm9ucyAuLi4iLCJfX3YiOjAsImNvbmZpcm1hdGlvbkNvZGUiOiIkMmIkMDUkengvZEd3TENsU0tDRXp5YzFaeS4xT3Q1QXlVNXlzODZxUzB2V2laYUlUOFowMlFyLzBXaS4iLCJjb25maXJtYXRpb25Db2RlRXhwaXJlRGF0ZSI6IjIwMjEtMDktMjJUMTg6NTQ6NDYuMzgzWiIsIm51bWJlck9mRmFpbGVkTG9naW5zIjowLCJsb2NrVGltZSI6IjIwMjEtMDgtMTVUMjA6NTI6MDAuOTQxWiIsInVzZXJBY2Nlc3NUeXBlIjoiQWRtaW4iLCJjcmVhdGVkQnkiOiI2MGVjZDY2NjU3NzQ5YjFkOTQwOTViY2YifSwiaWF0IjoxNjMyMzM5MTU4LCJleHAiOjE2MzIzNDI3NTh9.1qoHnx45CdkF0gMGuVUyC9TPKolgM3VZ4_ZvkZ75FvU
+
+
+###
+GET http://localhost:8081/api/user/email/vavan.v@gmail.com
+
+
+###
+GET http://localhost:8081/api/user/email/someemail@gmail.com
+
+
+###
+POST http://localhost:8081/api/user/create
+Content-Type: application/json
+
+    {
+        "email": "vavan.v@gmail.com",
+        "nickname": "vavan.v Admin",
+        "password" : "vvvv",
+        "isAdmin": true,
+        "isActive": true,
+        "details" : "Admin dont delete"
+    }
+
+
+###
+POST http://localhost:8081/api/user/create
+Content-Type: application/json
+
+    {
+        "email": "maasheenu@gmail.com",
+        "nickname": "maasheenu Admin",
+        "password" : "Aa253278",
+        "isAdmin": true,
+        "isActive": true,
+        "details" : "Admin! don't delete"
+    }
+
+
+###  Check nickname uniqueness
+POST http://localhost:8081/api/user/create
+Content-Type: application/json
+
+    {
+        "email": "new@gmail.com",
+        "nickname": "maasheenu Admin",
+        "password" : "pwd",
+        "isAdmin": true,
+        "isActive": true,
+        "details" : "Admin! don't delete"
+    }
+
+
+###
+PUT http://localhost:8081/api/user
+Content-Type: application/json
+
+    {
+        "email": "vavan.v@gmail.com",
+        "password" : "vvvv",
+        "isAdmin": true,
+        "isActive": true,
+        "details" : "Admin dont delete"
+    }
+
+
+###
+PUT http://localhost:8081/api/bot
+Content-Type: application/json
+
+    {
+        "email": "1user@mail202.com",
+        "location" : "192.168.1.2 Location 02",
+        "error":"Error: 404",
+        "status":false,
+        "requestedStatus": true
+    }
+
+
+###
+GET http://localhost:8081/api/bot/id/60552c12cdeb53001561cab4
+
+
+###
+GET http://localhost:8081/api/bot/email/vladimir@mail.com
+
+
+###
+GET http://localhost:8081/api/bot/requestedStatus/vladimir@mail.com
+
+
+###
+POST http://localhost:8081/api/bot/requestedStatus/vladimir@mail.com
+Content-Type: application/json
+
+{
+    "requestedStatus":false
+}
+
+
+###
+GET http://localhost:8081/api/bot/email/vladimir@mail2.com
+
+
+###
+DELETE http://localhost:8081/api/bot/id/60552bc7cdeb53001561cab3
+
+
+###
+DELETE http://localhost:8081/api/bot/email/v01@mail.com
+
+
+###
+GET http://localhost:8081/api/file/61588602e09a640016ed6ff6
+// Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImVtYWlsIjoidmF2YW4udkBnbWFpbC5jb20iLCJpYXQiOjE2MzEwNDI4NzksImV4cCI6MTYzMTA0NjQ3OX0.OWWhZFHK447jlb3C-08NniQV2ydimhrolIgB-MD_Gis
+
+
+###
+GET http://localhost:8081/api/md5/612ec9b2ee8b2d0016b7c4b7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWNkNjY2NTc3NDliMWQ5NDA5NWJjZiIsImVtYWlsIjoidmF2YW4udkBnbWFpbC5jb20iLCJpYXQiOjE2MzEwNDI4NzksImV4cCI6MTYzMTA0NjQ3OX0.OWWhZFHK447jlb3C-08NniQV2ydimhrolIgB-MD_Gis
+
+'37fb102be86143d7ebe567afc0a58fe7'
+
+
+###
+GET http://localhost:8081/api/md5/6175e3493e1ac573bdffc29b
+
+
+###
+DELETE http://localhost:8081/api/delete/express-handbook.pdf
+
+
+###
+GET http://localhost:8081/api/file/get
+Content-Type: application/json
+
+{
+    "key": "40LAW31IBEHZ3KVYLP5ZTCF5QZCJ5672",
+    "hd_id":"61e6d4064a92c8c54e35df70",
+    "code":"NWRLD",
+    "name":"launcher.exe"
+}
+
+
+###
+GET  http://localhost:8081/api/file/get
+Content-Type: application/json
+
+{
+        "key":"MDNPJJWGM9F5OLM5N66XFKSIBVZKOQO9",
+    "hd_id":"a6186c9e7e305febaeb5262e987a86fa",
+    "code":"ALBION",
+    "name":"kinfinityhook.sys"
+}
+
+
+###
+GET  http://localhost:8081/api/license/days
+Content-Type: application/json
+
+{
+    "key":"XJWOQZAGCFM3DXWBACM6Z59AFSNTE25B++",
+    "hd_id":"778a0d211c2ce89037942abdf5911476"
+}
+
+###
+GET  http://localhost:8081/api/license/days
+Content-Type: application/json
+
+{
+    "key":"XJWOQZAGCFM3DXWBACM6Z59AFSNTE25B",
+    "hd_id":"778a0d211c2ce89037942abdf5911476++"
+}
+
+###
+GET  http://localhost:8081/api/license/days
+Content-Type: application/json
+
+{
+    "key":"KYDCLJ9HL16F6NDXS3M0TVMN2GHT9ZA8",
+    "hd_id":"test"
+}
+
+
+###
+GET  http://localhost:8081/api/bot/ping
+Content-Type: application/json
+
+{
+  "key":"MDNPJJWGM9F5OLM5N66XFKSIBVZKOQO9",
+    "hd_id":"a6186c9e7e305febaeb5262e987a86fa"
+}
+
+###
+
+GET http:/localhost:8081/api/license/days
+Content-Type: application/json
+
+{
+    "key":"7E4NA3581M2OFL0RSUJ9P759PY1PCVRZ",
+}
