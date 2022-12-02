@@ -11,3 +11,20 @@ export interface StationResult {
   Metadata: Metadata;
   Stations: { Station: Station[] };
 }
+
+export interface Stop {
+  // ZoneCode: string;
+  // StreetNumber: string;
+  // Intersection: string;
+  // City: string;
+  // StreetName: string;
+  Code: string;
+  StopName: string;
+  Longitude: number;
+  Latitude: number;
+}
+
+export interface StopResult {
+  Metadata: Metadata;
+  Stop: Stop;
+}
