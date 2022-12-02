@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 
 import { getMorgan, getLogger } from './logging';
+import { CommonRoutes } from './routes/CommonRoutes';
+import { StationRoutes } from './routes/StationRoutes';
+import { StationRepository } from './repository/StationRepository';
 
 class App {
   public express: express.Application;
@@ -11,9 +14,8 @@ class App {
 
     this.middleware();
 
-    // new BotRoutes().routes(this.express, new BotRepository());
-
-    // new CommonRoutes().routes(this.express);
+    new StationRoutes().routes(this.express, new StationRepository());
+    new CommonRoutes().routes(this.express);
   }
 
   private middleware(): void {
