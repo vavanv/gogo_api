@@ -18,7 +18,12 @@ export class StationRoutes {
       for (const station of stations) {
         const data: StopResult = await stationRepository.getStopDetailByCode(station.LocationCode);
         result.push({
+          zoneCode: data.Stop.ZoneCode,
+          streetNumber: data.Stop.StreetNumber,
+          intersection: data.Stop.Intersection,
           code: data.Stop.Code,
+          city: data.Stop.City,
+          streetName: data.Stop.StreetName,
           stopName: data.Stop.StopName,
           longitude: data.Stop.Longitude,
           latitude: data.Stop.Latitude,

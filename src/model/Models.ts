@@ -13,11 +13,11 @@ export interface StationResult {
 }
 
 export interface Stop {
-  // ZoneCode: string;
-  // StreetNumber: string;
-  // Intersection: string;
-  // City: string;
-  // StreetName: string;
+  ZoneCode: string;
+  StreetNumber: string;
+  Intersection: string;
+  City: string;
+  StreetName: string;
   Code: string;
   StopName: string;
   Longitude: number;
@@ -25,11 +25,11 @@ export interface Stop {
 }
 
 export interface StopReturn {
-  // ZoneCode: string;
-  // StreetNumber: string;
-  // Intersection: string;
-  // City: string;
-  // StreetName: string;
+  zoneCode: string;
+  streetNumber: string;
+  intersection: string;
+  city: string;
+  streetName: string;
   code: string;
   stopName: string;
   longitude: number;
