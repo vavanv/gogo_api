@@ -7,7 +7,7 @@ import { getDuration } from '../utils/duration';
 
 export class StationRoutes {
   public routes = (express: express.Application, stationRepository: StationRepository): void => {
-    express.get('/stops', async (_: Request, res: Response) => {
+    express.get('/api/V1/stops', async (_: Request, res: Response) => {
       const start = dayjs();
       const result: Stop[] = [];
       const data: StationResult = await stationRepository.getAllStops();
