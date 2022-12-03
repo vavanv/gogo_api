@@ -15,7 +15,7 @@ interface Environment {
   openMetrolinxUrl: string;
 }
 
-export const environment: Environment = {
+export const environment2: Environment = {
   logLevel: process.env.LOG_LEVEL || 'info',
   port: process.env.PORT || DEFAULT_PORT,
   mongoDb: process.env.MONGO_CONNECTION_STRING as string,

@@ -2,7 +2,7 @@ import winston, { format, Logger } from 'winston';
 import { TransformableInfo } from 'logform';
 import morgan from 'morgan';
 import { RequestHandler } from 'express';
-import { environment } from '../environment';
+// import { environment } from '../environment';
 
 const DEFAULT_LOGGER = 'default-logger';
 
@@ -25,7 +25,7 @@ winston.addColors(colors);
 
 winston.loggers.add(DEFAULT_LOGGER, {
   exitOnError: false,
-  level: environment.logLevel,
+  level: process.env.LOG_LEVEL,
   levels: winston.config.syslog.levels,
   transports: [
     new winston.transports.Console({

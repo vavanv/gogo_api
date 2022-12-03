@@ -24,6 +24,18 @@ export interface Stop {
   Latitude: number;
 }
 
+export interface StopReturn {
+  // ZoneCode: string;
+  // StreetNumber: string;
+  // Intersection: string;
+  // City: string;
+  // StreetName: string;
+  code: string;
+  stopName: string;
+  longitude: number;
+  latitude: number;
+}
+
 export interface StopResult {
   Metadata: Metadata;
   Stop: Stop;

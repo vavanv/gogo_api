@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API_URLS } from '../api/constants';
-import { environment } from '../environment';
+// import { environment } from '../environment';
 // import { getLogger } from '../logging';
 import { StationResult, StopResult } from '../model/Models';
 
@@ -8,7 +8,7 @@ import { StationResult, StopResult } from '../model/Models';
 
 export class StationRepository {
   async getAllStops(): Promise<StationResult> {
-    const url = `${environment.openMetrolinxUrl}${API_URLS.stops_all}?Key=${environment.openMetrolinxKey}`;
+    const url = `${process.env.OPEN_METROLINX_URL}${API_URLS.stops_all}?Key=${process.env.OPEN_METROLINX_KEY}`;
     // logger.info(`StationRepository - getAllStops -- url: ${url}`);
     return await (
       await axios.get(url)
@@ -16,7 +16,7 @@ export class StationRepository {
   }
 
   async getStopDetailByCode(code: string): Promise<StopResult> {
-    const url = `${environment.openMetrolinxUrl}${API_URLS.stop_detail}/${code}?Key=${environment.openMetrolinxKey}`;
+    const url = `${process.env.OPEN_METROLINX_URL}${API_URLS.stop_detail}/${code}?Key=${process.env.OPEN_METROLINX_KEY}`;
     // logger.info(`StationRepository - getStopDetailByCode -- url: ${url}`);
     return await (
       await axios.get(url)
