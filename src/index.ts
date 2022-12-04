@@ -1,10 +1,10 @@
 import * as http from 'http';
 import App from './app';
-// import { environment } from './environment';
 import { getLogger } from './logging';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
 const logger = getLogger();
 logger.info(`Logger configured with ${process.env.LOG_LEVEL} log level`);
 

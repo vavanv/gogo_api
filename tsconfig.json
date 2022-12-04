@@ -13,7 +13,6 @@
     "skipLibCheck": true
     // "noImplicitAny": false
   },
-  // "include": ["src/**/*.ts", "src/index.ts", "src/environment.ts"],
   "include": ["src/**/*.ts", "src/index.ts"],
   "exclude": ["node_modules/**/*", "src/**/*.test.ts*", "**/integration-tests"]
 }

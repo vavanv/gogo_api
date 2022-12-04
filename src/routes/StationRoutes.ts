@@ -11,25 +11,29 @@ export class StationRoutes {
       const start = dayjs();
       const result: StopReturn[] = [];
       const data: StationResult = await stationRepository.getAllStops();
+      console.log(`Station result: ${getDuration(start)}`);
       const stations: Station[] = data.Stations.Station.filter(
         station =>
           station.LocationType == 'Train Station' || station.LocationType == 'Train & Bus Station',
       );
+      console.log(`Station ${getDuration(start)}`);
       for (const station of stations) {
         const data: StopResult = await stationRepository.getStopDetailByCode(station.LocationCode);
-        result.push({
-          zoneCode: data.Stop.ZoneCode,
-          streetNumber: data.Stop.StreetNumber,
-          intersection: data.Stop.Intersection,
-          code: data.Stop.Code,
-          city: data.Stop.City,
-          streetName: data.Stop.StreetName,
-          stopName: data.Stop.StopName,
-          longitude: data.Stop.Longitude,
-          latitude: data.Stop.Latitude,
-        });
+        if (data.Stop.Latitude !== null && data.Stop.Longitude !== null) {
+          result.push({
+            zoneCode: data.Stop.ZoneCode,
+            streetNumber: data.Stop.StreetNumber,
+            intersection: data.Stop.Intersection,
+            code: data.Stop.Code,
+            city: data.Stop.City,
+            streetName: data.Stop.StreetName,
+            stopName: data.Stop.StopName,
+            longitude: Number(data.Stop.Longitude),
+            latitude: Number(data.Stop.Latitude),
+          });
+        }
       }
-      console.log(getDuration(start));
+      console.log(`Whole process; ${getDuration(start)}`);
       res.status(200).json(result);
     });
   };

@@ -1,10 +1,6 @@
 import axios from 'axios';
 import { API_URLS } from '../api/constants';
-// import { environment } from '../environment';
-// import { getLogger } from '../logging';
 import { StationResult, StopResult } from '../model/Models';
-
-// const logger = getLogger();
 
 export class StationRepository {
   async getAllStops(): Promise<StationResult> {
