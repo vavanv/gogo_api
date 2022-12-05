@@ -1,7 +1,8 @@
 import mongoose, { ConnectOptions } from 'mongoose';
-import { environment } from '../environment';
+// import { environment } from '../environment';
 import dotenv from 'dotenv';
 import { getLogger } from '../logging';
+// import { env } from 'process';
 
 const logger = getLogger();
 
@@ -12,7 +13,7 @@ export const connect = (): void => {
     return;
   }
 
-  const url = environment.mongoDb as string;
+  const url = process.env.MONGO_CONNECTION_STRING as string;
   logger.error(`Url ${url}`);
   if (!url) {
     logger.error('Mongo connection url is not provided');

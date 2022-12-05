@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 
-const DEFAULT_PORT = 8081;
+export const DEFAULT_PORT = 8081;
+export const DEFAULT_LOG_LEVEL = 'info';
 
 const result = dotenv.config();
 if (result.error) {
