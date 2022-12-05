@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { API_URLS } from '../api/constants';
-import { StationResult, StopResult } from '../model/Models';
+import { StationResult } from '../model/Station';
+import { StopResult } from '../model/Stop';
 
 export class StationRepository {
   async getAllStops(): Promise<StationResult> {

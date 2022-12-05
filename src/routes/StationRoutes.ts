@@ -1,7 +1,8 @@
 import express, { Request, Response } from 'express';
 import dayjs from 'dayjs';
 
-import { Station, StationResult, StopResult, StopReturn } from '../model/Models';
+import { StopResult, StopReturn } from '../model/Stop';
+import { Station, StationResult } from '../model/Station';
 import { StationRepository } from '../repository/StationRepository';
 import { getDuration } from '../utils/duration';
 
