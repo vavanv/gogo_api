@@ -2,3 +2,8 @@
 GET http://localhost:8081/api/V1/stops
 
 
+###
+GET http://localhost:8081/api/V1/routes
+
+
+

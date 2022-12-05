@@ -10,7 +10,7 @@ export interface IRoute extends Document {
   route_text_color: string;
 }
 
-const Route: Schema = new Schema({
+const RouteSchema: Schema = new Schema({
   route_id: { type: String, index: true },
   agency_id: { type: String },
   route_short_name: { type: String },
@@ -20,4 +20,4 @@ const Route: Schema = new Schema({
   route_text_color: { type: String },
 });
 
-export const RouteModel: Model<IRoute> = model<IRoute>('routes', Route);
+export const RouteModel: Model<IRoute> = model<IRoute>('routes', RouteSchema);

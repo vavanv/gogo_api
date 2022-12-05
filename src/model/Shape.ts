@@ -7,11 +7,11 @@ export interface IShape extends Document {
   shape_pt_sequence: number;
 }
 
-const Shape: Schema = new Schema({
-  shape_id: { type: Number },
+const ShapeSchema: Schema = new Schema({
+  shape_id: { type: Number, index: true },
   shape_pt_lat: { type: Number },
   shape_pt_lon: { type: Number },
   shape_pt_sequence: { type: Number },
 });
 
-export const ShapeModel: Model<IShape> = model<IShape>('shapes', Shape);
+export const ShapeModel: Model<IShape> = model<IShape>('shapes', ShapeSchema);

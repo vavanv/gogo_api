@@ -14,18 +14,18 @@ export interface ITrip extends Document {
   route_variant: number;
 }
 
-const Trip: Schema = new Schema({
-  route_id: { type: String },
+const TripSchema: Schema = new Schema({
+  route_id: { type: String, index: true },
   service_id: { type: Number },
-  trip_id: { type: String },
+  trip_id: { type: String, index: true },
   trip_headsign: { type: String },
   trip_short_name: { type: String },
   direction_id: { type: Number },
   block_id: { type: String },
-  shape_id: { type: Number },
+  shape_id: { type: Number, index: true },
   wheelchair_accessible: { type: Number },
   bikes_allowed: { type: Number },
   route_variant: { type: Number },
 });
 
-export const TripModel: Model<ITrip> = model<ITrip>('trips', Trip);
+export const TripModel: Model<ITrip> = model<ITrip>('trips', TripSchema);
