@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import dayjs from 'dayjs';
 
-import { StopResult, StopReturn } from '../model/Stop';
+import { FacilityReturn, StopResult, StopReturn, ParkingReturn } from '../model/Stop';
 import { Station, StationResult } from '../model/Station';
 import { StationRepository } from '../repository/StationRepository';
 import { getDuration } from '../utils/duration';
@@ -21,6 +21,19 @@ export class StationRoutes {
       for (const station of stations) {
         const data: StopResult = await stationRepository.getStopDetailByCode(station.LocationCode);
         if (data.Stop.Latitude !== null && data.Stop.Longitude !== null) {
+          const facilities: FacilityReturn[] = [];
+          data.Stop.Facilities.map(f => {
+            facilities.push({
+              description: f.Description,
+            });
+          });
+          const parkings: ParkingReturn[] = [];
+          data.Stop.Parkings.map(p => {
+            parkings.push({
+              name: p.Name,
+              parkSpots: p.ParkSpots,
+            });
+          });
           result.push({
             zoneCode: data.Stop.ZoneCode,
             streetNumber: data.Stop.StreetNumber,
@@ -31,6 +44,8 @@ export class StationRoutes {
             stopName: data.Stop.StopName,
             longitude: Number(data.Stop.Longitude),
             latitude: Number(data.Stop.Latitude),
+            facilities: facilities,
+            parkings: parkings,
           });
         }
       }
