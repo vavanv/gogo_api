@@ -4,7 +4,7 @@ import cors from 'cors';
 import { getMorgan, getLogger } from './logging';
 import { CommonRoutes } from './routes/CommonRoutes';
 import { StationRoutes } from './routes/StationRoutes';
-import { RouteRoutes } from './routes/RouteRoutes';
+import { ShapeRoutes } from './routes/ShapeRoutes';
 import { StationRepository } from './repository/StationRepository';
 import { RouteRepository } from './repository/RouteRepository';
 import { TripRepository } from './repository/TripRepository';
@@ -19,7 +19,7 @@ class App {
     this.middleware();
 
     new StationRoutes().routes(this.express, new StationRepository());
-    new RouteRoutes().routes(
+    new ShapeRoutes().routes(
       this.express,
       new RouteRepository(),
       new TripRepository(),

@@ -8,7 +8,7 @@ export interface ITrip extends Document {
   trip_short_name: string;
   direction_id: number;
   block_id: string;
-  shape_id: number;
+  shape_id: string;
   wheelchair_accessible: number;
   bikes_allowed: number;
   route_variant: number;
@@ -22,7 +22,7 @@ const TripSchema: Schema = new Schema({
   trip_short_name: { type: String },
   direction_id: { type: Number },
   block_id: { type: String },
-  shape_id: { type: Number, index: true },
+  shape_id: { type: String, index: true },
   wheelchair_accessible: { type: Number },
   bikes_allowed: { type: Number },
   route_variant: { type: Number },

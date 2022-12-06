@@ -7,7 +7,6 @@ export class RouteRepository {
   }
 
   async getRoutesByType(type: number): Promise<IRoute[]> {
-    console.log(`call getRoutesByType`);
     return await RouteModel.find({ route_type: type });
   }
 }
