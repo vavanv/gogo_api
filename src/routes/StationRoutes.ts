@@ -22,13 +22,13 @@ export class StationRoutes {
         const data: StopResult = await stationRepository.getStopDetailByCode(station.LocationCode);
         if (data.Stop.Latitude !== null && data.Stop.Longitude !== null) {
           const facilities: FacilityReturn[] = [];
-          data.Stop.Facilities.map(f => {
+          data.Stop.Facilities.forEach(f => {
             facilities.push({
               description: f.Description,
             });
           });
           const parkings: ParkingReturn[] = [];
-          data.Stop.Parkings.map(p => {
+          data.Stop.Parkings.forEach(p => {
             parkings.push({
               name: p.Name,
               parkSpots: p.ParkSpots,
