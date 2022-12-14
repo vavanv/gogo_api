@@ -21,3 +21,12 @@ const RouteSchema: Schema = new Schema({
 });
 
 export const RouteModel: Model<IRoute> = model<IRoute>('routes', RouteSchema);
+
+export interface RouteReturn {
+  key: string;
+  shortName: string;
+  longName: string;
+  color: string;
+  headSign: string;
+  shapeId: string;
+}

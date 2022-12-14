@@ -5,6 +5,7 @@ import { getMorgan, getLogger } from './logging';
 import { CommonRoutes } from './routes/CommonRoutes';
 import { StationRoutes } from './routes/StationRoutes';
 import { ShapeRoutes } from './routes/ShapeRoutes';
+import { RouteRoutes } from './routes/RouteRoutes';
 import { StationRepository } from './repository/StationRepository';
 import { RouteRepository } from './repository/RouteRepository';
 import { TripRepository } from './repository/TripRepository';
@@ -25,6 +26,7 @@ class App {
       new TripRepository(),
       new ShapeRepository(),
     );
+    new RouteRoutes().routes(this.express, new RouteRepository(), new TripRepository());
     new CommonRoutes().routes(this.express);
   }
 

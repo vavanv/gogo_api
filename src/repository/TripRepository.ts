@@ -9,4 +9,8 @@ export class TripRepository {
   async getTripByRouteIds(routeIds: string[]): Promise<ITrip[]> {
     return await TripModel.find({ route_id: routeIds });
   }
+
+  async getFirstOneTripByRouteId(routeId: string): Promise<ITrip> {
+    return (await TripModel.findOne({ route_id: routeId })) as ITrip;
+  }
 }
