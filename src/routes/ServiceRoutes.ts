@@ -15,7 +15,7 @@ export class ServiceRoutes {
         const data: TripResult = await serviceRepository.getAllTrains();
         console.log(`trip result: ${getDuration(start)}`);
         const result: TripReturn[] = [];
-        data.Trips.Trip.forEach(t => {
+        data?.Trips?.Trip?.forEach(t => {
           result.push({
             cars: t.Cars,
             tripNumber: t.TripNumber,
