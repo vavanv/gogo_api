@@ -49,7 +49,7 @@ export class StationRoutes {
           });
         }
       }
-      console.log(`Whole process; ${getDuration(start)}`);
+      console.log(`process time: ${getDuration(start)}`);
       res.status(200).json(result);
     });
   };

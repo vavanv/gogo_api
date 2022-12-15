@@ -40,7 +40,7 @@ export class ShapeRoutes {
             sec: s.shape_pt_sequence,
           });
         });
-        console.log(`time: ${getDuration(start)}`);
+        console.log(`process time: ${getDuration(start)}`);
         res.status(200).json(result);
       } catch (e) {
         console.log(`error: ${e}`);

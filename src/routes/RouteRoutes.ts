@@ -33,7 +33,7 @@ export class RouteRoutes {
             shapeId: trip.shape_id,
           });
         }
-        console.log(`time: ${getDuration(start)}`);
+        console.log(`process time: ${getDuration(start)}`);
         res.status(200).json(result);
       } catch (e) {
         console.log(`error: ${e}`);

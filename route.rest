@@ -8,3 +8,11 @@ GET http://localhost:8081/api/V1/shapes
 
 ###
 GET http://localhost:8081/api/V1/routes
+
+
+###
+GET https://gogo-api.onrender.com/api/V1/routes
+
+
+###
+GET http://localhost:8081/api/V1/service/trains
